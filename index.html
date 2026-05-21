@@ -11,7 +11,6 @@
       --teal: #0f8f8c;
       --teal-dark: #0b6f6d;
       --gray: #5f6b76;
-      --light: #f4fbfb;
       --line: #d8dee5;
       --white: #ffffff;
       --ink: #1f2933;
@@ -120,9 +119,9 @@
       margin-top: 18px;
       padding: 14px 16px;
       border-radius: 18px;
-      border: 1px solid #f1d47a;
-      background: #fffdf3;
-      color: #725100;
+      border: 1px solid #b6e2df;
+      background: #f0fbfa;
+      color: #0b6f6d;
       font-size: 0.95rem;
       position: relative;
       z-index: 1;
@@ -402,8 +401,7 @@
       </p>
 
       <div class="notice">
-        Upload your URS logo to <strong>assets/urs-logo.png</strong>.
-        Replace the Google Apps Script URL inside this file before sharing the form.
+        This intake is managed by Upper Room Solutions. Upload your URS logo to <strong>assets/urs-logo.png</strong>.
       </div>
     </section>
 
@@ -899,7 +897,7 @@
       <section class="submit-card">
         <div>
           <strong>Ready to send?</strong>
-          <p>Submission will route to your Google Apps Script Web App.</p>
+          <p>Submission will route to Upper Room Solutions.</p>
           <div id="formStatus" class="status"></div>
         </div>
 
@@ -909,7 +907,7 @@
   </main>
 
   <script>
-    const GOOGLE_SCRIPT_WEB_APP_URL = "PASTE_YOUR_GOOGLE_SCRIPT_WEB_APP_URL_HERE";
+    const GOOGLE_SCRIPT_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxdE9AoEfmXJWGnJpZkqOXqOGi9aTNnTNygInqIuzlPv0BGRop-x0yTyv-VyI1Q8r3G/exec";
     const MAX_FILE_SIZE_MB = 10;
 
     const carrierRows = document.getElementById("carrierRows");
@@ -1059,11 +1057,6 @@
       const submitButton = document.getElementById("submitButton");
 
       if (form.website.value) return;
-
-      if (!GOOGLE_SCRIPT_WEB_APP_URL || GOOGLE_SCRIPT_WEB_APP_URL.includes("PASTE_YOUR")) {
-        setStatus("error", "Add your Google Apps Script Web App URL before publishing this form.");
-        return;
-      }
 
       submitButton.disabled = true;
       submitButton.textContent = "Submitting...";
